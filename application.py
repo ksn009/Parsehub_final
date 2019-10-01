@@ -9,9 +9,9 @@ import mysql.connector
 import time
 mydb = mysql.connector.connect(
   host="localhost",
-  user="root",
-  passwd="",
-  database="scrape_parsehub_p3"
+  user="admin",
+  passwd="vlvdW0IWRkTDfkvpk3m6",
+  database="flaskdb"
 )
 mycursor = mydb.cursor()
 v=[]
