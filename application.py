@@ -17,17 +17,17 @@ mycursor = mydb.cursor()
 v=[]
 now = datetime.now()
 now1="project3_"+str(now)+".csv"
-application = flask.Flask(__name__)
-@app.route('/')
+application = Flask(__name__)
+@application.route('/')
 def my_form():
     return render_template('index.html')
-@app.route('/datareturn', methods=['POST'])
+@application.route('/datareturn', methods=['POST'])
 def datareturn():
     return render_template('my-form-api-lastrun.html')
-@app.route('/rundata', methods=['POST'])
+@application.route('/rundata', methods=['POST'])
 def rundata():
     return render_template('my-form-api.html')
-@app.route('/run', methods=['POST'])
+@application.route('/run', methods=['POST'])
 def run():
     api = request.form['api']
     api1=api.split()
@@ -92,7 +92,7 @@ def run():
     else:
         er="Please provide same number of API_KEY and PROJECT_TOKEN"
         return er
-@app.route('/dreturn', methods=['POST'])
+@application.route('/dreturn', methods=['POST'])
 def dreturn():
     api = request.form['api']
     api1=api.split()
@@ -181,4 +181,4 @@ def dreturn():
 
 
 if __name__ == '__main__':
-    application.run(host='13.233.211.63')    
+    application.run()
